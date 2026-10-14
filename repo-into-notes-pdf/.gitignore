@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+*.pyc
+work/
+*.zip
+*-contact.png
+*.pdf
+!docs/*.pdf
+.DS_Store

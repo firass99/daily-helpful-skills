@@ -1,0 +1,12 @@
+{
+  "name": "repo-into-notes-pdf",
+  "version": "1.0.0",
+  "description": "Claude skill: turn a GitHub repo URL into a step-by-step PDF study guide with clean code, a Sommaire and cheat tables.",
+  "bin": { "repo-into-notes-pdf": "bin/install.js" },
+  "files": ["bin", "skills", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": ["claude", "claude-code", "claude-skill", "agent-skills", "documentation", "pdf", "cheat-sheet", "study-guide"],
+  "repository": { "type": "git", "url": "git+https://github.com/firass99/repo-into-notes-pdf.git" },
+  "author": "Firas Sebai (https://github.com/firass99)",
+  "license": "MIT"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Project Name API",
+  "subtitle": "Backend notes",
+  "kicker": "Project notes · step-by-step guide",
+  "lead": "How the project is built, and how to rebuild it cleanly and securely. Each step includes code, with the repo's bugs fixed.",
+  "chips": ["Node.js 20", "TypeScript", "Express 5", "MongoDB · Mongoose 8", "Zod", "JWT"],
+  "part_blurbs": {
+    "A": "Architecture, stack, folders",
+    "B": "Env, models, auth, modules",
+    "C": "Bugs fixed, env, commands"
+  },
+  "source": "Source: github.com/owner/repo",
+  "date": "Month YYYY",
+  "footer": "Project Name API · Backend notes",
+  "lang": "en"
+}

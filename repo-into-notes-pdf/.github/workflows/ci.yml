@@ -1,0 +1,22 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r skills/repo-into-notes-pdf/requirements.txt && python -m playwright install --with-deps chromium
+      - run: sudo apt-get install -y poppler-utils
+      - name: installer
+        run: node bin/install.js --dir /tmp/skills && test -f /tmp/skills/repo-into-notes-pdf/SKILL.md && node bin/install.js --zip /tmp/skill.zip
+      - name: build the template guide
+        run: |
+          python skills/repo-into-notes-pdf/scripts/build.py skills/repo-into-notes-pdf/assets/template --out /tmp/t.pdf | tee /tmp/build.log
+          ! grep -q "no page found" /tmp/build.log
+          python skills/repo-into-notes-pdf/scripts/check.py /tmp/t.pdf
+      - name: scan a repo
+        run: python skills/repo-into-notes-pdf/scripts/scan_repo.py https://github.com/firass99/express-intern-management --out /tmp/work
