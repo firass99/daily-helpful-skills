@@ -13,12 +13,12 @@ const HELP = `
 ${NAME} — Claude skill: GitHub repo → step-by-step PDF notes
 
 Usage
-  npx ${NAME}                    install for Claude Code, all projects   (~/.claude/skills/${NAME})
-  npx ${NAME} --project          install for this project only           (./.claude/skills/${NAME})
-  npx ${NAME} --dir <path>       install into <path>/${NAME}
-  npx ${NAME} --zip [file]       build a .zip to upload as a skill in Claude.ai
-  npx ${NAME} uninstall [--project | --dir <path>]
-  npx ${NAME} --check            check Python / Chromium / poppler requirements
+  node bin/install.js                    install for Claude Code, all projects   (~/.claude/skills/${NAME})
+  node bin/install.js --project          install for this project only           (./.claude/skills/${NAME})
+  node bin/install.js --dir <path>       install into <path>/${NAME}
+  node bin/install.js --zip [file]       build a .zip to upload as a skill in Claude.ai
+  node bin/install.js uninstall [--project | --dir <path>]
+  node bin/install.js --check            check Python / Chromium / poppler requirements
 
 Options
   --force   overwrite an existing install

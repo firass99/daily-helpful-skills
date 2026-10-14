@@ -1,8 +1,15 @@
-name: CI
-on: [push, pull_request]
+name: repo-into-notes-pdf
+on:
+  push:
+    paths: ["repo-into-notes-pdf/**", ".github/workflows/repo-into-notes-pdf.yml"]
+  pull_request:
+    paths: ["repo-into-notes-pdf/**", ".github/workflows/repo-into-notes-pdf.yml"]
 jobs:
   smoke:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: repo-into-notes-pdf
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

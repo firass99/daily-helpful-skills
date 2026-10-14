@@ -4,7 +4,8 @@ A collection of **[Claude skills](https://docs.claude.com/en/docs/agents-and-too
 dev work. A skill is a folder with a `SKILL.md` (instructions) plus scripts and references, which Claude loads on its own
 when your request matches what the skill does. You install it once, then just ask Claude in plain words.
 
-Each skill sits in its own folder at the root of this repo, with its own README, installer and license.
+Each skill sits in its own folder at the root of this repo, with its own README, installer and license. CI for each
+skill lives in [.github/workflows/](.github/workflows/) and runs only when that skill's folder changes.
 
 ## Available skills
 

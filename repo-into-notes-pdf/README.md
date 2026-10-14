@@ -8,26 +8,22 @@ A [Claude skill](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/o
 - the project **rebuilt cleanly**, every code block headed by its file path
 - **"vs. the repo"** callouts for each bug or security gap found, plus cheat tables (routes, env vars, lifecycle, OWASP mapping)
 
-| Example | From |
-|---|---|
-| [Intern Management API — Backend notes (45 p.)](docs/examples/Intern-Management-API-Notes.pdf) | `firass99/express-intern-management` |
-| [Auth with JWT & Sessions — Express → Next.js (35 p.)](docs/examples/Auth-JWT-Sessions-Express-to-Nextjs.pdf) | `TechWithEmmaYT/Advanced-MERN-Auths-2FA` |
-
 ## Install
 
 **Claude Code** (all projects):
 ```bash
-npx github:firass99/repo-into-notes-pdf
+git clone https://github.com/firass99/daily-helpful-skills.git
+cd daily-helpful-skills/repo-into-notes-pdf
+node bin/install.js
 ```
-Once published to npm, `npx repo-into-notes-pdf` does the same.
 
 | Command | Does |
 |---|---|
-| `npx github:firass99/repo-into-notes-pdf --project` | install in `./.claude/skills/` (commit it to share with your team) |
-| `npx github:firass99/repo-into-notes-pdf --dir <path>` | install anywhere |
-| `npx github:firass99/repo-into-notes-pdf --zip` | build `repo-into-notes-pdf.zip` to upload as a skill in Claude.ai |
-| `npx github:firass99/repo-into-notes-pdf --check` | check Python / Chromium / poppler |
-| `npx github:firass99/repo-into-notes-pdf uninstall` | remove it |
+| `node bin/install.js --project` | install in `./.claude/skills/` (commit it to share with your team) |
+| `node bin/install.js --dir <path>` | install anywhere |
+| `node bin/install.js --zip` | build `repo-into-notes-pdf.zip` to upload as a skill in Claude.ai |
+| `node bin/install.js --check` | check Python / Chromium / poppler |
+| `node bin/install.js uninstall` | remove it |
 
 **Manual:** copy `skills/repo-into-notes-pdf/` into `~/.claude/skills/`.
 

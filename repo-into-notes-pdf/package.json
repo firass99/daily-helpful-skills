@@ -6,7 +6,7 @@
   "files": ["bin", "skills", "README.md", "LICENSE"],
   "engines": { "node": ">=18" },
   "keywords": ["claude", "claude-code", "claude-skill", "agent-skills", "documentation", "pdf", "cheat-sheet", "study-guide"],
-  "repository": { "type": "git", "url": "git+https://github.com/firass99/repo-into-notes-pdf.git" },
+  "repository": { "type": "git", "url": "git+https://github.com/firass99/daily-helpful-skills.git", "directory": "repo-into-notes-pdf" },
   "author": "Firas Sebai (https://github.com/firass99)",
   "license": "MIT"
 }
