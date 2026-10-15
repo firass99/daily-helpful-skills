@@ -54,20 +54,20 @@ code { font-size: .86em; background: #f1f5f9; border: 1px solid #e2e8f0; border-
 .code .file { background: #161b22; color: #8b949e; font: 600 7.4pt "DejaVu Sans Mono", monospace; padding: 1.4mm 3mm; border-bottom: 1px solid #21262d; }
 .code pre { margin: 0; padding: 2.6mm 3mm; color: #e6edf3; font-size: 7.8pt; line-height: 1.45; white-space: pre-wrap; word-break: break-word; }
 .code.diagram pre { color: #c9d1d9; }
-.code .file, .code pre > span:first-child { break-after: avoid; }
+.code .file { break-after: avoid; }
 
-/* pygments github-dark (subset) */
-.code .k, .code .kd, .code .kn, .code .kr, .code .kc, .code .kt { color: #ff7b72; }
-.code .s, .code .s1, .code .s2, .code .sb, .code .sa, .code .se, .code .sr { color: #a5d6ff; }
-.code .c, .code .c1, .code .cm, .code .ch, .code .cs { color: #8b949e; font-style: italic; }
-.code .nf, .code .fm { color: #d2a8ff; }
-.code .nc, .code .nn { color: #f0883e; }
-.code .m, .code .mi, .code .mf, .code .mh { color: #79c0ff; }
-.code .nb, .code .bp, .code .no { color: #79c0ff; }
-.code .o, .code .ow { color: #ff7b72; }
-.code .na, .code .nt { color: #7ee787; }
-.code .nv, .code .vi { color: #ffa657; }
-.code .err { color: #f85149; }
+/* highlight.js github-dark (subset) */
+.code .hljs-keyword, .code .hljs-meta .hljs-keyword, .code .hljs-template-tag, .code .hljs-type, .code .hljs-operator { color: #ff7b72; }
+.code .hljs-string, .code .hljs-regexp, .code .hljs-meta .hljs-string { color: #a5d6ff; }
+.code .hljs-comment, .code .hljs-code, .code .hljs-formula { color: #8b949e; font-style: italic; }
+.code .hljs-title.function_, .code .hljs-title { color: #d2a8ff; }
+.code .hljs-title.class_, .code .hljs-title.class_.inherited__ { color: #f0883e; }
+.code .hljs-number, .code .hljs-literal, .code .hljs-built_in, .code .hljs-attr, .code .hljs-meta, .code .hljs-variable.constant_ { color: #79c0ff; }
+.code .hljs-name, .code .hljs-selector-tag, .code .hljs-selector-class, .code .hljs-bullet { color: #7ee787; }
+.code .hljs-variable, .code .hljs-property, .code .hljs-symbol, .code .hljs-template-variable { color: #ffa657; }
+.code .hljs-section { color: #1f6feb; font-weight: 700; }
+.code .hljs-deletion { color: #ffdcd7; background: #67060c; }
+.code .hljs-addition { color: #aff5b4; background: #033a16; }
 
 /* ---------- tables ---------- */
 table { width: 100%; border-collapse: collapse; margin: 2.5mm 0 4mm; font-size: 8.4pt; }

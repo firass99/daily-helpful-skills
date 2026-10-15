@@ -1,4 +1,0 @@
-pygments>=2.17
-pypdf>=4.0
-playwright>=1.46
-pillow>=10.0

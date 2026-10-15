@@ -12,14 +12,14 @@ jobs:
         working-directory: skills/repo-into-notes-pdf
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install -r requirements.txt && python -m playwright install --with-deps chromium
-      - run: sudo apt-get install -y poppler-utils
-      - name: build the template guide
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      # no npm step on purpose: the scripts must install their own packages on first run
+      - name: build the template guide (uses the runner's preinstalled Chrome)
         run: |
-          python scripts/build.py assets/template --out /tmp/t.pdf | tee /tmp/build.log
+          node scripts/build.mjs assets/template --out /tmp/t.pdf | tee /tmp/build.log
           ! grep -q "no page found" /tmp/build.log
-          python scripts/check.py /tmp/t.pdf
+          node scripts/check.mjs /tmp/t.pdf
+          test -s /tmp/t-contact.png
       - name: scan a repo
-        run: python scripts/scan_repo.py https://github.com/firass99/express-intern-management --out /tmp/work
+        run: node scripts/scan.mjs https://github.com/firass99/express-intern-management --out /tmp/work

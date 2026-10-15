@@ -14,12 +14,10 @@ study guide**:
 npx skills add firass99/daily-helpful-skills --skill repo-into-notes-pdf
 ```
 
-Needs, where the skill runs (Claude.ai's sandbox already has them):
+Needs **Node 20+**, **git** and **Chrome or Edge** (already on almost every machine). That's it: no Python, no browser
+download. The first run installs the skill's npm packages by itself.
 
-```bash
-pip install -r requirements.txt && python3 -m playwright install chromium
-apt install poppler-utils        # or: brew install poppler
-```
+The older Python version is kept at tag [`v0-py`](https://github.com/firass99/daily-helpful-skills/tree/v0-py).
 
 ## Use
 
@@ -38,16 +36,17 @@ sums up what it covered and fixed. Ask for changes ("drop Part X", "add DevOps")
 |---|---|
 | `SKILL.md` | the workflow: scope → scan → analyse → outline → write → build → check |
 | `references/` | Part catalogue, analysis checklist, content rules, PDF build notes (loaded when needed) |
-| `scripts/scan_repo.py` | clone + map the repo → `scan.json` (stack, layers, key files, env vars, red flags) |
-| `scripts/lib.py` | helpers to write Parts: `part()` `step()` `code()` `table()` `note()` … |
-| `scripts/build.py` | HTML → Chromium PDF, real page numbers in the Sommaire |
-| `scripts/check.py` | contact sheet + empty-page check |
+| `scripts/scan.mjs` | clone + map the repo → `scan.json` (stack, layers, key files, env vars, red flags) |
+| `scripts/lib.mjs` | helpers to write Parts: `part()` `step()` `code()` `table()` `note()` … |
+| `scripts/build.mjs` | HTML → PDF with the installed Chrome/Edge, real page numbers in the Sommaire |
+| `scripts/check.mjs` | contact sheet + empty-page check (pdf.js, no poppler) |
+| `scripts/browser.mjs`, `deps.mjs` | find the local browser; install npm packages on first run |
 | `assets/` | stylesheet and a starter guide template |
 
 Run the pipeline by hand:
 
 ```bash
-python3 scripts/scan_repo.py https://github.com/firass99/express-intern-management --out work
-python3 scripts/build.py assets/template --out work/demo.pdf
-python3 scripts/check.py work/demo.pdf
+node scripts/scan.mjs https://github.com/firass99/express-intern-management --out work
+node scripts/build.mjs assets/template --out work/demo.pdf
+node scripts/check.mjs work/demo.pdf
 ```
